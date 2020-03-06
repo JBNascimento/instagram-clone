@@ -1,12 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 
 mongoose.connect('mongodb+srv://dbuser:dbuser123@cluster0-8pofn.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser:true,
 })
+
+app.use(cors());
 
 app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resized')));
 
