@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import api from '../services/api';
 
 import './Feed.css';
 
@@ -66,7 +67,7 @@ class Feed extends Component{
                     </footer>
 
                 </article>
-                
+
             </section>            
         );
     }
